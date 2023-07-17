@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Repositório para testes - Ruby on Rails
 
-Things you may want to cover:
+Cursos da Udemy:
 
-* Ruby version
+* The Complete Ruby on Rails Developer Course
+    * Aulas: 432
+    * Vídeo: 48 horas no total
 
-* System dependencies
+* Professores:
+    * Rob Percival (Web Developer And Teacher)
+    * Mashrur Hossain (Technology Professional and Entrepreneur)
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
