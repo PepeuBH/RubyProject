@@ -1,5 +1,6 @@
 <h1>Create a new Article</h1>
 
+<%# IF IT HAS ANY ERRORS, SHOW THE MESSAGE %>
 <% if @article.errors.any? %>
     <h2>The following errros prevented te article from being created
     <ul>
@@ -26,3 +27,7 @@
 </p>
 
 <% end %>
+
+<br>
+
+<%= link_to 'Return to Articles', articles_path(@article) %>

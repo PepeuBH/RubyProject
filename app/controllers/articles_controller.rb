@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
   end
 
   def index
@@ -13,11 +13,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(params.require(:article).permit(:title, :description)) #ALLOW THE ACCESS OF THESES ATRIBUTES
     if @article.save
       flash[:notice] = "ARTICLE CREATED!"
       redirect_to @article
@@ -28,13 +28,21 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(params.require(:article).permit(:title, :description)) #ALLOW THE ACCESS OF THESES ATRIBUTES
       flash[:notice] = "ARTICLE UPDATED"
       redirect_to @article
     else
       render 'edit'
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
+    @article.destroy
+    flash[:notice] = "ARTICLE DELETED!"
+    redirect_to articles_path
+  end
+
 
 end
 
