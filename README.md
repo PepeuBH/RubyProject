@@ -1,17 +1,9 @@
 # README
 
-Repositório para testes - Ruby on Rails
+# Article Blog - Link
+* https://article-blog-9117eabfab6c.herokuapp.com/
 
-Cursos da Udemy:
 
-* The Complete Ruby on Rails Developer Course
-    * Aulas: 432
-    * Vídeo: 48 horas no total
-
-* Professores:
-    * Rob Percival (Web Developer And Teacher)
-    * Mashrur Hossain (Technology Professional and Entrepreneur)
-    
     ![Alt text](image-1.png)
 
 
