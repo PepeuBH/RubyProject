@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
-    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
   end
 
   def index
@@ -13,22 +13,21 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :description)) #ALLOW THE ACCESS OF THESES ATRIBUTES
+    @article = Article.new(permit_params)
     if @article.save
       flash[:notice] = "ARTICLE CREATED!"
-      redirect_to @article
+      redirect_to articles_path
     else
       render 'new'
     end
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description)) #ALLOW THE ACCESS OF THESES ATRIBUTES
+
+    if @article.update(permit_params)
       flash[:notice] = "ARTICLE UPDATED"
       redirect_to @article
     else
@@ -37,12 +36,26 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
     @article.destroy
     flash[:notice] = "ARTICLE DELETED!"
     redirect_to articles_path
   end
 
+
+
+
+
+
+  
+  private #PRIVATE means that any code below this line is only usable by this Class/Controller
+
+  def set_article
+    @article = Article.find(params[:id]) #GET THE ARTICLE WITH THE SPECIFIC ID
+  end
+
+  def permit_params
+    params.require(:article).permit(:title, :description) #ALLOW THE ACCESS OF THESES ATRIBUTES
+  end
 
 end
 

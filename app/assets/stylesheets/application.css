@@ -13,3 +13,151 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+nav{
+    border-radius: 10px;
+}
+
+.centered-title {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+th,
+td {
+    /* overflow: hidden; */
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+} */
+
+
+.form-text-field {
+    border-radius: 10px;
+    width: 200px;
+}
+
+.form-title {
+    text-align: left !important;
+}
+
+
+.form-new-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    background-color: rgb(157, 178, 191);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.bi-journal-code {
+    font-size: 20px;
+}
+
+.navbar-brand {
+    color: rgb(157, 178, 191);
+}
+
+.nav-link {
+    color: rgb(157, 178, 191);
+}
+
+.nav-custom {
+    background-color: rgb(39, 55, 77);
+}
+
+body {
+    background-color: rgb(82, 109, 130);
+    min-height: 100vh;
+}
+
+.flash {
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+
+    max-width: 100%;
+    width: max-content;
+    padding: 0 var(--space-m);
+
+    &__message {
+        font-size: var(--font-size-s);
+        color: var(--color-white);
+        padding: var(--space-xs) var(--space-m);
+        background-color: var(--color-dark);
+        animation: appear-then-fade 4s both;
+        border-radius: 999px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.green-button {
+    background-color: rgb(74, 193, 23);
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.yellow-button {
+    background-color: rgb(216, 216, 0);
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.red-button {
+    background-color: rgb(136, 4, 4);
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.blue-button {
+    background-color: rgb(157, 178, 191);
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.blue-text {
+    color: rgb(157, 178, 191);
+}
+
+.white-text {
+    color: white;
+}

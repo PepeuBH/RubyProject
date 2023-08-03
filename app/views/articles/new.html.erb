@@ -1,4 +1,3 @@
-<h1>Create a new Article</h1>
 
 <%# IF IT HAS ANY ERRORS, SHOW THE MESSAGE %>
 <% if @article.errors.any? %>
@@ -10,24 +9,26 @@
     </ul>
 <% end %>
 
+<div class="form-new-article">
 
-<%= form_with scope: :article, url: articles_path, data: { turbo: false }, local: true do |f|%>
-<p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-</p>
+    <%= form_with scope: :article, url: articles_path, data: { turbo: false }, local: true do |f|%>
+        <legend><strong>Create a new Article</strong></legend>
 
-<p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-</p>
+        <strong><%= f.label :title, class: "form-title"%></strong><br>
+        <%= f.text_field :title, class: "form-text-field" %> <br>
 
-<p>
-    <%= f.submit%>
-</p>
+        <strong><%= f.label :description, class: "form-title" %></strong> <br>
+        <%= f.text_area :description, class: "form-text-field" %> <br>
 
-<% end %>
+        <%= f.submit 'Save', class: "green-button" %>
+
+    <% end %>
 
 <br>
 
-<%= link_to 'Return to Articles', articles_path(@article) %>
+<button class="blue-button">
+    <%= link_to 'Return to Articles', articles_path(@article) %>
+</button>
+</div>
+
+

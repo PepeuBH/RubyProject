@@ -1,4 +1,3 @@
-<h1>Edit your Article</h1>
 
 <%# IF IT HAS ANY ERRORS, SHOW THE MESSAGE %>
 <% if @article.errors.any? %>
@@ -10,24 +9,25 @@
     </ul>
 <% end %>
 
+<div class="form-new-article">
 
-<%= form_with(model: @article, local: true, data: { turbo: false }) do |f| %>
-<p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-</p>
+    <%= form_with(model: @article, local: true, data: { turbo: false }) do |f| %>
+        <legend><strong>Edit Article</strong></legend>
 
-<p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-</p>
+        <strong><%= f.label :title, class: "form-title" %></strong><br>
+        <%= f.text_field :title, class: "form-text-field" %> <br>
 
-<p>
-    <%= f.submit%>
-</p>
+        <strong><%= f.label :description, class: "form-title" %></strong><br>
+        <%= f.text_area :description, class: "form-text-field" %> <br>
 
-<% end %>
+        <%= f.submit 'Save', class: "green-button"%>
 
-<%= link_to 'Cancel and return to Articles', articles_path(@article) %>
+    <% end %>
 
+<br>
+
+<button class="blue-button">
+    <%= link_to 'Cancel and return to Articles', articles_path(@article) %>
+</button>
+</div>
 
